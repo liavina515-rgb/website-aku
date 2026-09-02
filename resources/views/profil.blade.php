@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>home</title>
 </head>
 <body>
-    kelompok salwa,revina,nada,rizky
+    <h1>Profil siswa</h1>
+    <p>Nama: {{ $nama }}</p>
+    <p>Kelas: {{ $kelas }}</p>
 </body>
 </html>
