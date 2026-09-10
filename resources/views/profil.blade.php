@@ -7,8 +7,6 @@
     <title>home</title>
 </head>
 <body>
-    <h1>Profil siswa</h1>
-    <p>Nama: {{ $nama }}</p>
-    <p>Kelas: {{ $kelas }}</p>
+    selamat datang
 </body>
 </html>

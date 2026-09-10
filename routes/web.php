@@ -2,8 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/profil', function () {
-    $nama = 'revina';
-    $kelas = 'XI PPLG A';
-    return view('profil', compact('nama'));
+Route::get('/home', function () {
+    $kelompok = 8;
+    $kelas = "XI PPLG A";
+    return view('home', compact('kelompok', 'kelas'));
+});
+
+Route::get('/about', function () {
+    return view('about');
 });
