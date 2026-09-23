@@ -13,3 +13,9 @@ Route::get('/about', function () {
 use App\Http\Controllers\ProdukController;
 Route::get('/produk', [ProdukController::class, 'index'])
 ->name('produk');
+
+Route::get('/produk/{id}', [ProdukController::class, 'show'])
+->name('produk.show');
+
+Route::get('/produk/{id}', [ProdukController::class,'show'])
+->name('produk.show');

@@ -9,19 +9,34 @@ class ProdukController extends Controller
     private function dataProduk()
     {
         return [
-            [ 'nama_produk' => 'ASUS ROG Strix G15','harga'=> '12000000'
+            [
+                'nama_produk' => 'ASUS ROG Strix G15',
+                'harga' => '12000000'
             ],
-            [ 'nama_produk' => 'Corsair K70 RGB','harga'=> '2500000'
+            [
+                'nama_produk' => 'Corsair K70 RGB',
+                'harga' => '2500000'
             ],
-            [ 'nama_produk' => 'Fantech Maxfit61','harga'=> '350000'
+            [
+                'nama_produk' => 'Fantech Maxfit61',
+                'harga' => '350000'
             ],
 
         ];
-
-        }
-        public function index()
-        {
-            $produks= $this->dataProduk();
-            return view('produk.index', compact('produks'));
     }
-}
+
+    public function index()
+    {
+        $produks = $this->dataProduk();
+        return view('produk.index', compact('produks'));
+    }
+    public function show($id)
+    {
+        $produks = $this->dataProduk();
+        if ($id >= count($produks)) {
+            abort(404);
+        }
+        $produk = $produks[$id];
+        return view('produk.show', compact('produk'));
+    }
+    }
