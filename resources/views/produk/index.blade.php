@@ -14,17 +14,9 @@
                 <td>{{ $produk['nama_produk'] }}</td>
                 <td>
                     {{ number_format($produk['harga']) }}</td>
-                <thead>
-                    <tr>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <a href="{{ route('produk.show', $key) }}">Details
-                            </a>
-                        </td>
+                <td>
+                    <a href="{{ route('produk.show', $key) }}">Details</a>
+                </td>
                     </tr>
                 </tbody>
             </tr>

@@ -5,6 +5,7 @@
     Harga: {{ number_format($produk['harga']) }}
 </p>
 <p>
-    <a href="{{ route('produk.index') }}">Kembali ke Produk
+    <a href="{{ route('produk.index') }}">
+        Kembali ke Produk
     </a>
 </p>
