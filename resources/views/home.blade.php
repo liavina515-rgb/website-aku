@@ -6,7 +6,7 @@
 <div class="card-body">
 
     <h5 class="card-title">
-Selamat datang di {{ config('app.name')}}
+Selamat datang di kelompok 8
 </h5>
 
 <p class="card-text">

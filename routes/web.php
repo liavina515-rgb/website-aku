@@ -2,12 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/home', function () {
-    $kelompok = 8;
-    $kelas = "XI PPLG A";
-    return view('home', compact('kelompok', 'kelas'));
-});
+Route::get('/', function () {
+     return view('home');
+})->name('home');
 
 Route::get('/about', function () {
     return view('about');
-});
+})->name('about');
+
+use App\Http\Controllers\ProdukController;
+Route::get('/produk', [ProdukController::class, 'index'])
+->name('produk');

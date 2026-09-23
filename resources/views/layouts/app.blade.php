@@ -12,7 +12,7 @@
     <div class="container mt-4">
         <main style="padding: 20px; min-height: 400px;">
             @yield('content')
-        </main>
+        </main
     </div>
     @include('partials.footer')
     <script src="{{ asset('dist/js/bootstrap.bundle.min.js')}}"></script>
