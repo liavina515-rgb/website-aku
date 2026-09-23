@@ -18,4 +18,5 @@ Route::get('/produk', [ProdukController::class, 'index'])
 Route::get('/produk/{id}', [ProdukController::class, 'show'])
 ->name('produk.show');
 
-
+use App\Http\Controllers\KategoriController;
+Route::resource('/kategori', KategoriController::class);
