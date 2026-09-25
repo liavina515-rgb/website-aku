@@ -28,7 +28,7 @@ class ProdukController extends Controller
     public function index()
     {
         $produks = $this->dataProduk();
-        return view('product.index', compact('produks'));
+        return view('produk.index', compact('produks'));
     }
     public function show($id)
     {
@@ -36,7 +36,7 @@ class ProdukController extends Controller
         if ($id >= count($produks)) {
             abort(404);
         }
-        $produk = $produks[$id];
+        $produk = $produks[$id - 1];
         return view('produk.show', compact('produk'));
     }
     }
