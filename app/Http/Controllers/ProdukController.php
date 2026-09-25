@@ -36,7 +36,7 @@ class ProdukController extends Controller
         if ($id >= count($produks)) {
             abort(404);
         }
-        $produk = $produks[$id - 1];
+        $produk = $produks[$id];
         return view('produk.show', compact('produk'));
     }
     }
