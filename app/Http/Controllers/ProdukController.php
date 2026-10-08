@@ -2,41 +2,68 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produk;
 use Illuminate\Http\Request;
 
 class ProdukController extends Controller
 {
-    private function dataProduk()
-    {
-        return [
-            [
-                'nama_produk' => 'ASUS ROG Strix G15',
-                'harga' => '12000000'
-            ],
-            [
-                'nama_produk' => 'Corsair K70 RGB',
-                'harga' => '2500000'
-            ],
-            [
-                'nama_produk' => 'Fantech Maxfit61',
-                'harga' => '350000'
-            ],
-
-        ];
-    }
-
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
-        $produks = $this->dataProduk();
+        $produks = Produk::all();
         return view('produk.index', compact('produks'));
     }
-    public function show($id)
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
     {
-        $produks = $this->dataProduk();
-        if ($id >= count($produks)) {
-            abort(404);
-        }
-        $produk = $produks[$id];
+        return view('produk.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        Produk::create($request->all());
+        return redirect()->route('produk.index');
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(Produk $produk)
+    {
         return view('produk.show', compact('produk'));
     }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Produk $produk)
+    {
+        return view('produk.edit', compact('produk'));
     }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, Produk $produk)
+    {
+        $produk->update($request->all());
+        return redirect()->route('produk.index');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Produk $produk)
+    {
+        $produk->delete();
+        return redirect()->route('produk.index');
+    }
+}
