@@ -1,4 +1,15 @@
 <h1>Daftar Produk</h1>
+
+<p>
+    <a href="{{ route('produk.create') }}">
+        Tambah Produk
+    </a>
+</p>
+@session('success')
+    <p style="color: green;">
+        {{ session('success') }}
+    </p>
+@endsession
 <table border="1" cellpadding="5">
     <thead>
         <tr>
@@ -24,6 +35,10 @@
                     <a href="{{ route('produk.show', $produk->id) }}">
                         Lihat Detail
                     </a>
+                        <button type="submit" onclick="return confirm('Apakah Anda yakin ingin menghapus produk ini?')">
+                            Hapus
+                        </button>
+                    </form>
                 </td>
             </tr>
         @endforeach
