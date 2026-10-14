@@ -30,7 +30,9 @@ class ProdukController extends Controller
     public function store(Request $request)
     {
         Produk::create($request->all());
-        return redirect()->route('produk.index');
+
+        return redirect()->route('produk.index')
+            ->with('success', 'Produk berhasil ditambahkan.');
     }
 
     /**
@@ -55,7 +57,8 @@ class ProdukController extends Controller
     public function update(Request $request, Produk $produk)
     {
         $produk->update($request->all());
-        return redirect()->route('produk.index');
+        return redirect()->route('produk.index')
+            ->with('success', 'Produk berhasil diperbarui.');
     }
 
     /**
@@ -64,6 +67,7 @@ class ProdukController extends Controller
     public function destroy(Produk $produk)
     {
         $produk->delete();
-        return redirect()->route('produk.index');
+        return redirect()->route('produk.index')
+            ->with('success', 'Produk berhasil dihapus.');
     }
 }
