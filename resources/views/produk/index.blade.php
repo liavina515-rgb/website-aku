@@ -35,7 +35,14 @@
                     <a href="{{ route('produk.show', $produk->id) }}">
                         Lihat Detail
                     </a>
-                        <button type="submit" onclick="return confirm('Apakah Anda yakin ingin menghapus produk ini?')">
+                    <a href="{{ route('produk.edit', $produk->id) }}">
+                        Edit
+                    </a>
+                    <form action="{{ route('produk.destroy', $produk->id) }}" method="POST" style="display: inline; ">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit"
+                        onclick="return confirm('Apakah Anda yakin ingin menghapus produk ini?')">
                             Hapus
                         </button>
                     </form>
