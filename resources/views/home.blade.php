@@ -10,7 +10,7 @@ Selamat datang di kelompok 8
 </h5>
 
 <p class="card-text">
-    Kami adalah kelompok Revina dari kelas XI PPLG A. Website ini ditahap pengembangan dan masih banyak kekurangan. Mohon maaf atas ketidak nyamanannya.
+    Kami adalah kelompok 9 dari kelas XI PPLG A. Website ini ditahap pengembangan dan masih banyak kekurangan. Mohon maaf atas ketidak nyamanannya.
 </p>
 </div>
 </div>
